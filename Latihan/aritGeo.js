@@ -1,13 +1,18 @@
+function aritgeo(num){
+for(i=0;i<num.length;i++){
 
-function arithGeo(arr){
-	var selisihArith = arr[1]- arr[0];
-	var selisihGeo = arr[1] / arr[0];
-
-
-for(var i=1;i<arr.length-1;i++){
-	var geserSelisihArit = arr[i+1]-arr[i];
-	var geserSelisihGeo = arr[i+1]/arr[i];
+	if(num[i+1]-num[i]===num[i] && num[num.length-1]- num[num.length-2]===num[i]){
+	return 'Arit';
+	} 
+	else if(num[i+1]/num[i]==num[num.length-1]/num[num.length-2]){ 
+	return 'Geo';
+	}
+	else {
+		return -1;
+	}
 }
 }
-arithGeo([1,2,3,4,5]);
-arithGeo([2,4,8,16]);
+console.log(aritgeo([1,2,3,5,7,7]));
+console.log(aritgeo([2,4,6,8,10]));
+console.log(aritgeo([2,6,18,54]));
+

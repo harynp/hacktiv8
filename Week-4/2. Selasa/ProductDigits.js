@@ -18,4 +18,4 @@ function ProductDigits(num) {
 // console.log(ProductDigits(20)); 
    
 // keep this function call here 
-ProductDigits(readline());
+console.log(ProductDigits(16));

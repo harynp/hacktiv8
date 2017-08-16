@@ -2,9 +2,13 @@
 
 				var mainDiv = document.createElement('div');
 				mainDiv.setAttribute('id', 'content');
-				mainDiv.setAttribute('class', 'content-post');
 				body.appendChild(mainDiv);
-						
+					
+				var mainDiv = document.createElement('div');
+				mainDiv.setAttribute('class', 'content-post');
+				body.appendChild(mainDiv);	
+
+
 					var h1 = document.createElement('h1');
 					var h1Text = document.createTextNode('Judul Post');
 					h1.appendChild(h1Text);
@@ -32,10 +36,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 				var mainDiv = document.createElement('div');
-				mainDiv.setAttribute('id', 'content');
 				mainDiv.setAttribute('class', 'content-post');
-				body.appendChild(mainDiv);
-						
+				body.appendChild(mainDiv);	
+
+
 					var h1 = document.createElement('h1');
 					var h1Text = document.createTextNode('Judul Post 2');
 					h1.appendChild(h1Text);
