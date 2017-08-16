@@ -22,6 +22,23 @@ OUTPUT : [ 'dont','know','what','have','lose']
 
 function averageLengthWord(words) {
 
+var newArr = words.split(' ');
+// console.log(newArr);
+var arr = [];
+for(i=0;i<newArr.length;i++){
+	arr.push(newArr[i].length);
+
+}
+
+var rata2 = arr.reduce(function(a, b) {return Math.round((a + b)/2);});
+
+var result = [];
+for(j=0;j<newArr.length;j++){
+	if(newArr[j].length === rata2){
+		result.push(newArr[j]);
+	}
+}
+return result;
 }
 
 console.log(averageLengthWord('Do you want to become a great coder ?')); //[‘you’]
