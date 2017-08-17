@@ -16,18 +16,27 @@ Input : ['', '', 'o', ''] = 0
 
 
 function targetTerdekat(arr) {
-var Ex =0;
-// var Oh =0;
 
-var temp = [];
-for (i = 0; i < arr.length; i++){
-    if (arr[i] === 'x' || arr[i] === 'o'){
-        temp.push(arr[i]);
-    } else {
-    	Ex++;
-    }
+var Oh = arr.indexOf("o");
+// console.log(Oh);
+var tampung = [];
+for(i=0;i<arr.length;i++){
+	var reset = 0;
+	if(arr[i]==='x'){
+		tampung.push(Math.abs(i-Oh));
+
+	}
+		reset++;
 }
-return Ex;
+
+
+	var hasil =  tampung.sort().shift();
+
+	if(typeof(hasil) === "undefined"){
+        return "0";
+    }   
+
+    return hasil;
 }
 
 

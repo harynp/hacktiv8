@@ -13,68 +13,26 @@ Output : c(1) , 2(2) ,b(3) ,9(4)
 
 
 */
-
-function mostFrequentItem(arr){
-
-// var uniqueArray = arr.filter(function(elem, pos) {
-//     return arr.indexOf(elem) == pos;
-
-// }); 
-var totalAsus = 0;
-var totalSamsung = 0;
-var totalIphone = 0;
-// var total = [];
-for(i=0;i<arr.length;i++){
-
-	if(arr[i] === 'samsung'){
-		totalSamsung++
-	} 
-	else if(arr[i] === 'iphone'){
-		totalIphone++;
-	}
-	else if(arr[i] === 'asus'){
-		totalAsus++;
-	}
-
+var arr = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4];
+var counted = [], count = [];
+var i = 0, j = 0, k = 0;
+while (k < arr.length) {
+    if (counted.indexOf(arr[k]) < 0) {
+        counted[i] = arr[k];
+        count[i] = 0;
+        for (j = 0; j < arr.length; j++) {
+            if (counted[i] == arr[j]) {
+                count[i]++;
+            }
+        }
+        i++;
+    } else {
+        k++;
+    }
 }
-// if(totalSamsung < totalIphone && totalIphone < totalAsus ){
-	total = 'samsung'+'('+totalSamsung+')'+', '+'iphone'+'('+totalIphone+')'+', '+'asus'+'('+totalAsus+')';
-	return total;
-}
-
-function mostFrequentItem2(arr){
-
-// var uniqueArray = arr.filter(function(elem, pos) {
-//     return arr.indexOf(elem) == pos;
-
-// }); 
-var totalc = 0;
-var totalb = 0;
-var total9 = 0;
-var total2 = 0;
-// var total = [];
-for(j=0;j<arr.length;j++){
-
-	if(arr[j] === 'b'){
-		totalb++
-	} 
-	else if(arr[j] === 'c'){
-		totalc++;
-	}
-	else if(arr[j] === 9){
-		total9++;
-	}
-	else if(arr[j] === 2){
-		total2++;
-	}
-
-}
-// if(totalSamsung < totalIphone && totalIphone < totalAsus ){
-	total2 = 'c'+'('+totalc+')'+', '+'2'+'('+total2+')'+', '+'b'+'('+totalb+')'+', '+'9'+'('+total9+')';
-	return total2;
-}
+console.log(count+'='+counted)
 
 
-console.log(mostFrequentItem(['asus', 'asus', 'samsung', 'iphone','iphone', 'asus','asus'])); // samsung(1), iphone(2) , asus(4)
-console.log(mostFrequentItem2([9,'b','b','c',9,9,'b',9, 2,2])); // c(1) , 2(2) ,b(3) ,9(4)
-// * Total dari array yang sama itu sendiri harus di tampilkan jumlah nya.
+// console.log(mostFrequentItem(['asus', 'asus', 'samsung', 'iphone','iphone', 'asus','asus'])); // samsung(1), iphone(2) , asus(4)
+// console.log(mostFrequentItem([9,'b','b','c',9,9,'b',9, 2,2])); // c(1) , 2(2) ,b(3) ,9(4)
+// // * Total dari array yang sama itu sendiri harus di tampilkan jumlah nya.
