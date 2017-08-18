@@ -35,7 +35,7 @@ function nextTargetArea(code) {
     for (i = 0; i < ambilCode.length; i++) {	//perulangan
         switch (ambilCode[i]) {					//jika dikalimat ada teridikasi huruf dari perulangan
             case 'W' : temp.push(2); break;		// W maka masukin 2 ditampung
-            case 'R' && case 'H' : temp.push(3); break;	// R & H masukin 3
+            case 'R' && 'H': temp.push(3); break;	// R & H masukin 3
             case 'U' : temp.push(4); break;		//U masukin 4
             case 'X' : temp.push(6); break;		//X masukin 6
             case 'V' : temp.push(7); break;		//V masukin 7
@@ -52,8 +52,3 @@ console.log(nextTargetArea('WTWTHROETEO')); // "District 7 is the next target!"
 console.log(nextTargetArea('HSEVTEEING')); // "District 15 is the next target!"
 console.log(nextTargetArea('FNEXSIVUSEOR')); // "District 17 is the next target!"
 console.log(nextTargetArea('EFNEXRSIVHUSEORTE')); // "District 20 is the next target!"
-
-
-// TWO THREE FOUR SIX SEVEN EIGHT
-
-// W   H   U    X V G
