@@ -13,26 +13,37 @@ Output : c(1) , 2(2) ,b(3) ,9(4)
 
 
 */
-var arr = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4];
-var counted = [], count = [];
-var i = 0, j = 0, k = 0;
-while (k < arr.length) {
-    if (counted.indexOf(arr[k]) < 0) {
-        counted[i] = arr[k];
-        count[i] = 0;
-        for (j = 0; j < arr.length; j++) {
-            if (counted[i] == arr[j]) {
-                count[i]++;
-            }
-        }
-        i++;
-    } else {
-        k++;
-    }
+
+function mostFrequentItem(arr){
+var final = [];
+var temp = [];
+	for(i=0;i<arr.length;i++){
+		if(temp.indexOf(arr[i]) === -1){
+			temp.push(arr[i])
+		}
+	}
+	var hasil =  temp.sort().reverse();
+	
+	for(j=0;j<hasil.length;j++){
+	var result = [];
+		for(k=0;k<arr.length;k++){
+			if(hasil[j]===arr[k]){
+				result.push(arr[k]);
+			}
+		}
+		final.push(result.length);
+
+	}
+if(final.length<4){
+	return hasil[0]+'('+final[0]+'), '+hasil[1]+'('+final[1]+'), '+hasil[2]+'('+final[2]+')';
+}else if(final.length=4){
+	return hasil[0]+'('+final[0]+'), '+hasil[3]+'('+final[3]+'), '+hasil[1]+'('+final[1]+'), '+hasil[2]+'('+final[2]+')';
 }
-console.log(count+'='+counted)
 
+return final;
 
-// console.log(mostFrequentItem(['asus', 'asus', 'samsung', 'iphone','iphone', 'asus','asus'])); // samsung(1), iphone(2) , asus(4)
-// console.log(mostFrequentItem([9,'b','b','c',9,9,'b',9, 2,2])); // c(1) , 2(2) ,b(3) ,9(4)
-// // * Total dari array yang sama itu sendiri harus di tampilkan jumlah nya.
+}
+
+console.log(mostFrequentItem(['asus', 'asus', 'samsung', 'iphone','iphone', 'asus','asus'])); // samsung(1), iphone(2) , asus(4)
+console.log(mostFrequentItem([9,'b','b','c',9,9,'b',9, 2,2])); // c(1) , 2(2) ,b(3) ,9(4)
+// * Total dari array yang sama itu sendiri harus di tampilkan jumlah nya.
