@@ -1,0 +1,12 @@
+PHASE 1
+=============================
+git clone <url>
+git branch <namafolder>
+git checkout <namafolder>
+vim README.md
+git add README.md
+git commit -m "release 0"
+git push origin <namafolder>
+pull request 
+=============================
+
